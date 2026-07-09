@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Портфолио - Евгений Бабошин, фотограф</title>
+<meta name="description" content="Портфолио фотографа Евгения Бабошина: портретные, репортажные, семейные фотосессии и love story в Санкт-Петербурге.">
+<link rel="icon" type="image/png" href="images/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Портфолио - Евгений Бабошин, фотограф">
+<meta property="og:description" content="Портфолио: портреты, репортаж, love story и семейные съёмки.">
+<meta property="og:image" content="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="banner">
+  <span>-10% на любую фотосессию подписчикам в Telegram</span>
+  <button class="close" onclick="this.parentElement.style.display='none'">×</button>
+</div>
+
+<header>
+  <div class="logo"><img class="logo-img" src="images/logo.png" alt="Евгений Бабошин - логотип"></div>
+  <nav>
+    <ul>
+      <li><a href="index.html#about">О себе</a></li>
+      <li><a href="index.html#services">Услуги</a></li>
+      <li><a href="portfolio.html">Портфолио</a></li>
+      <li><a href="index.html#reviews">Отзывы</a></li>
+      <li><a href="index.html#contacts">Контакты</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="gallery-head reveal">
+  <h1>Портфолио</h1>
+  <p>Портреты, репортаж, love story и семейные истории - все работы в одном месте</p>
+</div>
+
+<div class="filters">
+  <button class="active" data-filter="all">Все</button>
+  <button data-filter="portrait">Портрет</button>
+  <button data-filter="reportage">Репортаж</button>
+  <button data-filter="lovestory">Love story</button>
+  <button data-filter="family">Семейная</button>
+</div>
+
+<div class="grid" id="grid">
+  <img class="reveal" src="images/portrait-1.jpg" data-category="portrait" alt="Портрет">
+  <img class="reveal" src="images/portrait-2.jpg" data-category="portrait" alt="Портрет">
+  <img class="reveal" src="images/portrait-3.jpg" data-category="portrait" alt="Портрет">
+  <img class="reveal" src="images/reportage-1.jpg" data-category="reportage" alt="Репортаж">
+  <img class="reveal" src="images/reportage-2.jpg" data-category="reportage" alt="Репортаж">
+  <img class="reveal" src="images/reportage-3.jpg" data-category="reportage" alt="Репортаж">
+  <img class="reveal" src="images/lovestory-1.jpg" data-category="lovestory" alt="Love story">
+  <img class="reveal" src="images/lovestory-2.jpg" data-category="lovestory" alt="Love story">
+  <img class="reveal" src="images/lovestory-3.jpg" data-category="lovestory" alt="Love story">
+  <img class="reveal" src="images/family-1.jpg" data-category="family" alt="Семейная">
+  <img class="reveal" src="images/family-2.jpg" data-category="family" alt="Семейная">
+  <img class="reveal" src="images/family-3.jpg" data-category="family" alt="Семейная">
+</div>
+
+<div class="lightbox-overlay" id="lightbox-overlay">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Закрыть">×</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Предыдущее фото">‹</button>
+  <img id="lightbox-img" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Следующее фото">›</button>
+</div>
+
+<footer id="contacts">
+  <p>Портретный фотограф Бабошин Евгений</p>
+  <p>Санкт-Петербург</p>
+  <div class="socials">
+    <a href="https://vk.com/baboshin_pho" class="vk" aria-label="VK"><svg viewBox="0 0 576 512"><path d="M545.75 208.87c3.85-12.6 0-21.87-17.9-21.87h-59.21c-15 0-21.94 7.94-25.79 16.69 0 0-30.28 73.85-73.13 121.79-13.88 13.86-20.19 18.28-27.79 18.28-3.85 0-9.45-4.42-9.45-17V208.87c0-15.16-4.36-21.87-16.9-21.87h-93.06c-9.45 0-15.15 7-15.15 13.55 0 14.38 21.53 17.76 23.75 58.44v88.19c0 19.24-3.47 22.74-11.07 22.74-20.19 0-69.31-74.16-98.4-159-5.72-16.6-11.51-23.32-26.61-23.32H55.13c-16.9 0-20.31 7.94-20.31 16.69 0 15.94 20.13 94.42 93.7 198.05C177.42 464 233.09 512 283.86 512c30.65 0 34.42-6.92 34.42-18.83v-43.36c0-13.76 2.89-16.44 12.58-16.44 7.14 0 19.4 3.57 47.98 31.25 32.66 32.79 38.06 47.87 56.61 47.87h59.19c16.9 0 25.35-8.6 20.34-24.52-11.87-36.66-92.63-113.85-96.24-118.6-8.5-11.07-6.05-14.63 0-24.52.62-.98 76.05-107.71 84-146.24z"/></svg></a>
+    <a href="https://www.instagram.com/jakekillmoon/" class="instagram" aria-label="Instagram"><svg viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+    <a href="https://t.me/PhotographeBaboshin" class="telegram" aria-label="Telegram"><svg viewBox="0 0 496 512"><path d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.121-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.79,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"/></svg></a>
+  </div>
+  <p>© Все права защищены</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
