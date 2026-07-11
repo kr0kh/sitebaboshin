@@ -31,10 +31,36 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Предпросмотр выбранного фото в форме отзыва
+  var reviewPhotoInput = document.getElementById('review-photo-input');
+  var reviewPhotoPreview = document.getElementById('review-photo-preview');
+  var photoPickerLabel = document.getElementById('photo-picker');
+  function resetPhotoPreview() {
+    if (reviewPhotoPreview) reviewPhotoPreview.src = '';
+    if (photoPickerLabel) photoPickerLabel.classList.remove('has-photo');
+    if (reviewPhotoInput) reviewPhotoInput.value = '';
+  }
+  if (reviewPhotoInput && reviewPhotoPreview && photoPickerLabel) {
+    reviewPhotoInput.addEventListener('change', function () {
+      var file = reviewPhotoInput.files && reviewPhotoInput.files[0];
+      if (!file) {
+        resetPhotoPreview();
+        return;
+      }
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        reviewPhotoPreview.src = e.target.result;
+        photoPickerLabel.classList.add('has-photo');
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
   // Форма отзыва - отправка в Telegram через Cloudflare Worker (см. план)
   var reviewForm = document.getElementById('review-form');
   if (reviewForm) {
-    var WORKER_URL = 'https://2.kasp3r42-gmail-com.workers.dev';
+    var WORKER_URL = 'https://feedback-bot.kasp3r42.workers.dev';
+
     reviewForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var formData = new FormData(reviewForm);
@@ -46,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
           if (!res.ok) throw new Error('Ошибка отправки');
           alert('Спасибо за отзыв! Он отправлен.');
           reviewForm.reset();
+          resetPhotoPreview();
         })
         .catch(function () {
           alert('Не получилось отправить отзыв. Попробуйте позже или напишите в Telegram/WhatsApp.');
