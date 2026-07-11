@@ -59,8 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Форма отзыва - отправка в Telegram через Cloudflare Worker (см. план)
   var reviewForm = document.getElementById('review-form');
   if (reviewForm) {
-    var WORKER_URL = 'https://feedback-bot.kasp3r42.workers.dev';
-
+    var WORKER_URL = 'https://feed-back.kasp3r42.workers.dev';
     reviewForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var formData = new FormData(reviewForm);
