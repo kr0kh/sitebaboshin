@@ -56,19 +56,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Форма отзыва - отправка в Telegram через Cloudflare Worker (см. план)
+  // Форма отзыва - отправка через Web3Forms (без сервера, без Cloudflare)
   var reviewForm = document.getElementById('review-form');
   if (reviewForm) {
-    var WORKER_URL = 'https://feed-back.kasp3r42.workers.dev';
     reviewForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var formData = new FormData(reviewForm);
       var submitBtn = reviewForm.querySelector('button[type="submit"]');
       submitBtn.disabled = true;
       submitBtn.textContent = 'Отправка...';
-      fetch(WORKER_URL, { method: 'POST', body: formData })
-        .then(function (res) {
-          if (!res.ok) throw new Error('Ошибка отправки');
+      fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (!data.success) throw new Error('Ошибка отправки');
           alert('Спасибо за отзыв! Он отправлен.');
           reviewForm.reset();
           resetPhotoPreview();
